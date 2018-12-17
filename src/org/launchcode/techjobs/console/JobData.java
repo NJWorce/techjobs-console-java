@@ -32,9 +32,11 @@ public class JobData {
         ArrayList<HashMap<String, String>> searchReturn = new ArrayList<>() ;
 
         for (HashMap<String, String> row : allJobs) {
-
-            if (row.containsValue(searchTerm)){
+            String rowString = row.toString();
+            rowString = rowString.toLowerCase();
+            if (rowString.contains(searchTerm.toLowerCase())){
                 if (!searchReturn.contains(row)){
+
                     searchReturn.add(row);
                 }
             }
